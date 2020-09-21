@@ -4,7 +4,7 @@
 
 [Google Summer of Code (GSoC)](https://summerofcode.withgoogle.com/) is a global program focused on bringing more student developers into open source software development. Through the program, students get matched with open source, free software and technology-related organizations to write code and contribute to the open source community. The organizations provide mentors who act as guides through the entire process, from learning about the community to contributing code. The selected students work on a 3 month programming project during their break from school. 
 
-I was lucky and honoured to be selected to work on the project: [Anomaly Detection of the CoreDNS Server through Machine Learning](https://summerofcode.withgoogle.com/projects/#4806808834670592) proposed by the maintainers of the CoreDNS Organisation. Through this post, I'd like to describe my journey and also showcase the work my mentors and I accomplished over the summer.
+I was lucky and honoured to be selected to work on the project: [Anomaly Detection of the CoreDNS Server through Machine Learning](https://summerofcode.withgoogle.com/projects/#4806808834670592) proposed by the maintainers of the CoreDNS Organisation, as a Google Summer of Code Student Developer. Through this post, I'd like to describe my journey and also showcase the work my mentors and I accomplished over the summer.
 
 ## General Overview
 
