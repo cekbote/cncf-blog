@@ -97,3 +97,23 @@ The efficacy of the model is as follows:
   <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/training_results.png"/>
 </p>
 
+### Combining the ML Bridge Middleware with the Machine Learning Model
+
+Combining the Middleware with the machine learning model was fairly easy. All I had to do was save the trained model and then use the saved model in the Middleware for getting the predictions. These predictions were then communicated to the ML Bridge Plugin. The pseudocode for the same is as follows:
+
+```python
+
+def mlbridge(request):
+
+preprocessed_data = preprocess(data) # Preprocesses the data
+prediction = saved_model(prerocessed_data) # Gets the prediction from the trained model
+forward(prediction) # Forwards the prediction to the ML Bridge Plugin
+```
+
+## Google Summer of Code: Phase - I
+
+Once the machine learning model was created, we decided to take a step back and reformulated the goal of the project. Upon further discussion with my mentors I came to realise that normally, to prevent people from accessing certain malicious websites, vetted lists of malicious domains are used to check if the website requested by the user is malicious or benign. However, the problem with that was if the website requested by the user did not exist in the vetted list, it was assumed to be benign, which was not always the case. Therefore, we decided to use the machine learning model as a secondary check, i.e. if the domain name is not present in the vetted lists, we run it through the machine learning model and then send the status of the domain name back to the ML Bridge Plugin. In addition to that we decided to work on a User Interface (ML Bridge User Interface) which a system administrator could use to analyse the past historical trends to manually decide whether the domain queried was malicious or not.
+
+
+
+
