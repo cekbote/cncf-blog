@@ -233,3 +233,17 @@ A demo of the Training can be seen below:
 </p>
 
 The user has the ability to enter the number of epochs, the batch size as well as the sample size for the model training. The loss as well as accuracy graphs of the training are updated in real time. Once the training is completed, the confusion matrices as well as confusion metrics can be observed to understand the efficacy of the model. The efficacy of older pre-trained models can also be observed by selecting the load model option and entering the name of a pre-trained model.
+
+### Unit Testing
+
+I had little to no experience with Unit Testing. My mentors were kind enough to explain the process and also provided resources so that I’d fully understand the process. Once I had finished writing tests, I used the Travis CI and the Codecov tools to understand the potency of my test.
+
+### Creating The Code Documentation
+
+I had already added docstrings to most of the code I had written. The Pdoc tool was to convert the docstrings into an HTML format that is easily understood by all.
+
+### Creating The Website
+
+Due to the fact that we did not have a lot of time to create a website from scratch, my mentors and I decided to create a website via GitHub Pages. The Jekyll engine (the engine behind GitHub Pages) would convert the Readme file into a static website, with little to no modifications to the HTML and CSS files. 
+
+The website can be accessed at mlbridge.github.io.
