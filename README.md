@@ -246,7 +246,7 @@ I had already added docstrings to most of the code I had written. The Pdoc tool 
 
 Due to the fact that we did not have a lot of time to create a website from scratch, my mentors and I decided to create a website via GitHub Pages. The Jekyll engine (the engine behind GitHub Pages) would convert the Readme file into a static website, with little to no modifications to the HTML and CSS files. 
 
-The website can be accessed at https://mlbridge.github.io/mlbridge.github.io.
+The website can be accessed at https://mlbridge.github.io.
 
 ## The End of a Beautiful Journey...
 
