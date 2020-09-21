@@ -217,3 +217,19 @@ The user can decide whether to classify a non-vetted domain as a benign domain, 
 The ML Bridge Machine Learning Module is a module developed to use the information provided by the user regarding training, via the User Interface, namely the number of epochs, the batch size as well as the sample size to train a new model or retrain the existing model. The module then communicates back to the User Interface the accuracy graph, the loss graph, the confusion matrices as well as confusion metrics via Elasticsearch. 
 
 However at that time, since the User Interface for the training feature had not been completed, we added dummy values to the Elasticsearch Database to test the efficacy of the Machine Learning Model and verify the responses.
+
+## Google Summer of Code: Phase - III
+
+The final phase majorly consisted of creating unit tests for my code as well as creating documentation for all the work I had done. Moreover, due to the fact that my project involved a lot of components working together in tandem, my mentors advised me to create a website that would explain how all the components fit together. However, prior to that, I had to finish the training feature of the User Interface.
+
+### Incorporating the Training Feature into the ML Bridge User Interface
+
+The ML Bridge User Interface can be used to train new machine learning models or retrain older machine learning models. Such a capability is extremely useful when the current model underperforms or there is new data to train the model on.
+
+A demo of the Training can be seen below:
+
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/training.gif"/>
+</p>
+
+The user has the ability to enter the number of epochs, the batch size as well as the sample size for the model training. The loss as well as accuracy graphs of the training are updated in real time. Once the training is completed, the confusion matrices as well as confusion metrics can be observed to understand the efficacy of the model. The efficacy of older pre-trained models can also be observed by selecting the load model option and entering the name of a pre-trained model.
