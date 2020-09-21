@@ -246,4 +246,12 @@ I had already added docstrings to most of the code I had written. The Pdoc tool 
 
 Due to the fact that we did not have a lot of time to create a website from scratch, my mentors and I decided to create a website via GitHub Pages. The Jekyll engine (the engine behind GitHub Pages) would convert the Readme file into a static website, with little to no modifications to the HTML and CSS files. 
 
-The website can be accessed at mlbridge.github.io.
+The website can be accessed at https://mlbridge.github.io/mlbridge.github.io.
+
+## The End of a Beautiful Journey...
+
+At the end of my Google Summer of Code journey I had mixed feelings. On one hand I was delighted that I had learnt so much and grown a lot over the summer, on the other hand a part of me was sad that the journey had finally ended. It made me cherish the GSoC experience even more. What next you may ask. Well I'm not sure. I'd like to pick up a few new skills that I always wanted and explore some other interesting open-source projects. As Tolkien once said, *All that is gold does not glitter, Not all those who wander are lost*.
+
+## Acknowledgements
+
+I would like to thank my mentors <a href="https://www.linkedin.com/in/greenpau/">Paul Greenberg</a> and <a href="https://www.linkedin.com/in/yong-tang/">Yong Tang</a> for their continuous support and guidance throughout this amazing Google Summer of Code journey. They always ensured that all my doubts were cleared, helped me in identifying relevant issues and finding solutions for those problems, through extensive discussions. This journey would not have been possible without them. I would like to thank my friend [Dheeraj](https://www.linkedin.com/in/raghavendradheeraj/) who helped me design the ML Bridge logo. I would like to thank all the essential workers who are working tirelessly throughout this COVID-19 crisis. I would also like to thank [Cloud Native Foundation (CNCF)](https://www.cncf.io/) as well as [Google](https://summerofcode.withgoogle.com/) for providing me with this wonderful opportunity. I hope that both CNCF as well as Google through their respective student developer programs, continue to inspire many more developers for years to come and hope that their journey will be as memorable as mine 😄. 
