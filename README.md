@@ -179,7 +179,7 @@ The historical analysis feature has the following use cases:
 
 <p float="left" align = "center">
   <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/benign_domains_1.png" width="410" height="300"/>
-  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/benign_domain_2.png" width="410" height="300"/>
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/benign_domains_2.png" width="410" height="300"/>
 </p>
 
 **WhoIS Information:** The user interface enables the user to access the WhoIS records of the domain name. This allows the user to understand more information regarding the request queried, thereby enabling the user to make a well-informed decision while vetting the domain names.
@@ -187,3 +187,23 @@ The historical analysis feature has the following use cases:
 <p float="left" align = "center">
   <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/who_is_domains.png" width="410" height="300"/>
 </p>
+
+## Google Summer of Code: Phase - II
+
+After the historical analysis feature was completed, my mentors and I decided to add a new feature that would allow the user interface to be used to retrain older machine learning models as well as creating and training new machine learning models.
+
+The main problem was that we had to find a way to dissociate the training from the User Interface as we did not want the User Interface to be unusable until the training was complete. Hence we decided to create an ML Bridge Machine Learning Module which would be another component that would communicate with the ML Bridge User Interface via Elasticsearch.
+
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/mlbridge_inner_working_.png"/>
+</p> 
+
+Moreover, we still had to create the manual vetting feature so that the user would be able to classify certain domains as malicious or benign. Hence the project goals for the phase were: developing the manual vetting feature, developing the ML Bridge Machine Learning Module as well as developing the frontend for the User Interface for the training feature.
+
+The demo of Manual Vetting can be seen below:
+
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/manual-vetting.gif.gif"/>
+</p>
+
+The user can decide whether to classify a non-vetted domain as a benign domain, or can be classified as a domain that is malicious or can be selected to send back Honeypot IP addresses to the malicious domain. To classify the domains into a different class, select all the domains whose class has to be changed by selecting them via the checkboxes on the left. Then select the class you want them to be identified as from the options on the right and then click submit.
