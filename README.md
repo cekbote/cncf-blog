@@ -114,6 +114,72 @@ forward(prediction) # Forwards the prediction to the ML Bridge Plugin
 
 Once the machine learning model was created, we decided to take a step back and reformulated the goal of the project. Upon further discussion with my mentors I came to realise that normally, to prevent people from accessing certain malicious websites, vetted lists of malicious domains are used to check if the website requested by the user is malicious or benign. However, the problem with that was if the website requested by the user did not exist in the vetted list, it was assumed to be benign, which was not always the case. Therefore, we decided to use the machine learning model as a secondary check, i.e. if the domain name is not present in the vetted lists, we run it through the machine learning model and then send the status of the domain name back to the ML Bridge Plugin. In addition to that we decided to work on a User Interface (ML Bridge User Interface) which a system administrator could use to analyse the past historical trends to manually decide whether the domain queried was malicious or not.
 
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/second_step.png"/>
+</p>
+
+Hence the two main goals for Phase-I were to update the ML Bridge Middleware to use the machine learning model as a secondary check and finish the historical trend analysis in the ML Bridge User Interface. 
+
+However, before we started working on these goals we had to first solve the communication problem, i.e. how would the ML Bridge User Interface communicate with the Plugin and the Middleware?
+
+### Solving the Communication Problem
+
+Initially, we thought about solving the communication problem via HTTP POST requests. However, we soon realized that it would be too slow. We then decided to use a fast caching database and zeroed in on the NoSQL database: Elasticsearch.
+
+Elasticsearch is a NoSQL distributed database where the data is stored in a manner that data retrieval is quick. That makes it an ideal choice for communicating between different ML Bridge components running parallely.
+
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/elasticsearch.png" width="500"/>
+</p>
+
+Each component dumps data into the Elasticsearch Database, which then can be retrieved by other components. Depending on the data, different actions can be taken by each component. Hence, it acts as an ideal communication channel. Moreover, it also helps in storing data that can be retrieved at a later time or date.
+
+### Updating the Middleware
+
+The ML Bridge Middleware was updated to include the following functionalities:
+
+The Middleware first preprocesses the request forwarded from the Machine Learning Plugin. The preprocessed request is then cross-checked against manually vetted lists. If the request is of a benign domain, a response is sent back to the ML Bridge Plugin that allows the fallthrough to other plugins. If the request is of a malicious domain, a response is sent back to the ML Bridge Plugin that prevents the fallthrough to other plugins. Moreover, the ML Bridge Plugin sends back Honeypot or Blackhole IP addresses to the user querying the malicious domain. If the domain does not exist in the manually vetted list, the preprocessed request is then sent to the machine learning model where it infers whether it is benign or malicious.
+
+If the machine learning model is highly confident that the request is of a benign domain, then a response is sent back to the ML Bridge Plugin that allows the fallthrough to other plugins. If the model is highly confident that the domain name is malicious, a response is sent back to the ML Bridge Plugin that prevents the fallthrough to other plugins. Moreover, the ML Bridge Plugin sends back Honeypot or Blackhole IP addresses to the user querying the malicious domain. If the model is not confident about its prediction, then a response is sent back to the ML Bridge Plugin that allows the fallthrough to other plugins. However, the domain name is stored in the database for manual vetting.
+
+The classification result as well as other metadata such as the IP addresses, the date and time of the request, are stored in Elasticsearch.
+
+### Creating the User Interface and the Historical Analysis Feature
+
+There were many frameworks and alternatives that we could have used to create a user interface however, we decided to work with Dash as it would help in the easy prototyping and development of the user interface. Moreover, Dash had all the components that were needed for the project and hence it was an ideal choice.
+
+A demo of the Hisotorical Analysis Feature can be seen below:
+
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/historical-analysis.gif"/>
+</p>
+
+The Analysis tab contains the Historical Analysis feature.
+
+The historical analysis feature allows the user to visualize the frequency at which domains have been queried and the IP addresses of the users querying those domains in the past. Moreover, it also helps in understanding the top queried domains by the users. In addition to that the feature also provides the information of the domains as stored in the WhoIS Database. 
+
+The historical analysis feature has the following use cases:
+
+Domain Name Analysis: The user interface enables the user to search for a particular domain name along with a time range. The user interface then searches for that particular domain name in the Elasticsearch database. Once the domain name is found, the user interface will display the number of requests to that particular domain name in the user specified time range, the nature of the domain name (benign or malicious) and also the IP addresses that have queried that particular domain name. This allows for a domain-specific analysis.
+
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/historical_analysis_1.png" width="410" height="300"/>
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/historical_analysis_2.png" width="410" height="300"/>
+</p>
+
+Analysis of Malicious Domain Names: The user interface enables the user to visualize the top 20 malicious domains queried, as a bar graph. It also displays a list of all the malicious domains queried which can be seen via a toggle switch at the top right in the same window. This allows the user to gain a general picture of all the malicious domain names queried and also helps in identifying model misclassification. Moreover, the domain names that the model is not confident about, are highlighted in red. On clicking the Malicious Domains Tab:
 
 
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/malicious_domains_1.png" width="410" height="300"/>
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/malicious_domain_2.png" width="410" height="300"/>
+</p>
 
+Analysis of Benign Domain Names: The user interface enables the user to visualize the top 20 benign domains queried, as a bar graph. It also displays a list of all the benign domains queried which can be seen via a toggle switch at the top right in the same window. This allows the user to gain a general picture of all the benign domain names queried and also helps in identifying model misclassification. Moreover, the domain names that the model is not confident about, are highlighted in red. On clicking the Benign Domains Tab:
+
+
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/who_is_domains.png" width="410" height="300"/>
+</p>
+
+WhoIS Information: The user interface enables the user to access the WhoIS records of the domain name. This allows the user to understand more information regarding the request queried, thereby enabling the user to make a well-informed decision while vetting the domain names.
