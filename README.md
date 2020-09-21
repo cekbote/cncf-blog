@@ -6,6 +6,13 @@ Google Summer of Code (GSoC) is a global program focused on bringing more studen
 
 I was lucky and honoured to be selected to work on the project: [Anomaly Detection of the CoreDNS Server through Machine Learning](https://summerofcode.withgoogle.com/projects/#4806808834670592) proposed by maintainers of the CoreDNS Organisation (a CNCF gradudated project). Through this post, I'd like to describe my journey and also showcase the work my mentors and I accomplished over the summer.
 
+## General Overview
+
+The project is currently being used to integrate machine learning capabilities with CoreDNS, with the objective of protecting people against malicious websites and applications. It helps in identifying websites that could be potentially used by malicious hackers and cybercriminals and prevents the user from accessing such websites. 
+
+The project is also being used to provide machine learning capabilities to languages and platforms that generally have a dearth of such capabilities. One of the best features is that it is fully customisable and therefore can be tailored to fit the needs of any other project or organisation. 
+
+
 
 
 
