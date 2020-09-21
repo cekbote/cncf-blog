@@ -94,6 +94,6 @@ The model can be visualised as follows:
 The efficacy of the model is as follows:
 
 <p float="left" align = "center">
-  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/training_results.png" width="500" height="480"/>
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/training_results.png" width=90%/>
 </p>
 
