@@ -12,8 +12,12 @@ The project is currently being used to integrate machine learning capabilities w
 
 The project is also being used to provide machine learning capabilities to languages and platforms that generally have a dearth of such capabilities. One of the best features is that it is fully customisable and therefore can be tailored to fit the needs of any other project or organisation. 
 
+The project website can be found here: https://mlbridge.github.io/
 
+## Applying to the Google Summer of Code Program as a part of the CoreDNS Organisation
 
+I have always loved to contribute to open source projects ever since the first year of my undergraduate journey. I had applied to GSoC last year too, but unfortunately, it just didn’t materialize. This year I started contributing to an open-source organisation since the month of November. I familiarised myself with the code base, made a few connections in the community and submitted a few PR’s too. A few months down the road, I was elated to hear that the organisation would be participating in GSoC’20. Since I knew what projects they were working on and what new additions the projects would require, I was confident of submitting a good proposal with the appropriate deliverables. 
 
+However, fate had something else in store for me. The organisation I was contributing to, did not get selected for the GSoC’20 program and I had to look for other opportunities. I was searching for another organisation to apply to, when one of my peers advised me to take a look at CoreDNS. I was a bit apprehensive at first but when I saw the projects that CoreDNS had listed, I was floored. 
 
-
+The CoreDNS organisation had a project that I was really passionate about. It basically combined machine learning with cybersecurity which seemed like a pretty interesting proposition. I got in touch with the mentors Paul and Yong and clarified any discrepancies that I had. With the inputs that I had from the mentors, I created a proposal and the rest is history. 
