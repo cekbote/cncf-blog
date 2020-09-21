@@ -160,14 +160,14 @@ The historical analysis feature allows the user to visualize the frequency at wh
 
 The historical analysis feature has the following use cases:
 
-Domain Name Analysis: The user interface enables the user to search for a particular domain name along with a time range. The user interface then searches for that particular domain name in the Elasticsearch database. Once the domain name is found, the user interface will display the number of requests to that particular domain name in the user specified time range, the nature of the domain name (benign or malicious) and also the IP addresses that have queried that particular domain name. This allows for a domain-specific analysis.
+**Domain Name Analysis:** The user interface enables the user to search for a particular domain name along with a time range. The user interface then searches for that particular domain name in the Elasticsearch database. Once the domain name is found, the user interface will display the number of requests to that particular domain name in the user specified time range, the nature of the domain name (benign or malicious) and also the IP addresses that have queried that particular domain name. This allows for a domain-specific analysis.
 
 <p float="left" align = "center">
   <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/historical_analysis_1.png" width="410" height="300"/>
   <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/historical_analysis_2.png" width="410" height="300"/>
 </p>
 
-Analysis of Malicious Domain Names: The user interface enables the user to visualize the top 20 malicious domains queried, as a bar graph. It also displays a list of all the malicious domains queried which can be seen via a toggle switch at the top right in the same window. This allows the user to gain a general picture of all the malicious domain names queried and also helps in identifying model misclassification. Moreover, the domain names that the model is not confident about, are highlighted in red. On clicking the Malicious Domains Tab:
+**Analysis of Malicious Domain Names:** The user interface enables the user to visualize the top 20 malicious domains queried, as a bar graph. It also displays a list of all the malicious domains queried which can be seen via a toggle switch at the top right in the same window. This allows the user to gain a general picture of all the malicious domain names queried and also helps in identifying model misclassification. Moreover, the domain names that the model is not confident about, are highlighted in red. On clicking the Malicious Domains Tab:
 
 
 <p float="left" align = "center">
@@ -175,11 +175,15 @@ Analysis of Malicious Domain Names: The user interface enables the user to visua
   <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/malicious_domain_2.png" width="410" height="300"/>
 </p>
 
-Analysis of Benign Domain Names: The user interface enables the user to visualize the top 20 benign domains queried, as a bar graph. It also displays a list of all the benign domains queried which can be seen via a toggle switch at the top right in the same window. This allows the user to gain a general picture of all the benign domain names queried and also helps in identifying model misclassification. Moreover, the domain names that the model is not confident about, are highlighted in red. On clicking the Benign Domains Tab:
+**Analysis of Benign Domain Names:** The user interface enables the user to visualize the top 20 benign domains queried, as a bar graph. It also displays a list of all the benign domains queried which can be seen via a toggle switch at the top right in the same window. This allows the user to gain a general picture of all the benign domain names queried and also helps in identifying model misclassification. Moreover, the domain names that the model is not confident about, are highlighted in red. On clicking the Benign Domains Tab:
 
+<p float="left" align = "center">
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/benign_domains_1.png" width="410" height="300"/>
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/benign_domain_2.png" width="410" height="300"/>
+</p>
+
+**WhoIS Information:** The user interface enables the user to access the WhoIS records of the domain name. This allows the user to understand more information regarding the request queried, thereby enabling the user to make a well-informed decision while vetting the domain names.
 
 <p float="left" align = "center">
   <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/who_is_domains.png" width="410" height="300"/>
 </p>
-
-WhoIS Information: The user interface enables the user to access the WhoIS records of the domain name. This allows the user to understand more information regarding the request queried, thereby enabling the user to make a well-informed decision while vetting the domain names.
