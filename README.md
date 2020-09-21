@@ -21,3 +21,11 @@ I have always loved to contribute to open source projects ever since the first y
 However, fate had something else in store for me. The organisation I was contributing to, did not get selected for the GSoC’20 program and I had to look for other opportunities. I was searching for another organisation to apply to, when one of my peers advised me to take a look at CoreDNS. I was a bit apprehensive at first but when I saw the projects that CoreDNS had listed, I was floored. 
 
 The CoreDNS organisation had a project that I was really passionate about. It basically combined machine learning with cybersecurity which seemed like a pretty interesting proposition. I got in touch with the mentors Paul and Yong and clarified any discrepancies that I had. With the inputs that I had from the mentors, I created a proposal and the rest is history. 
+
+## The Community Bonding Period
+
+Due to the onset of COVID-19, my term exams were postponed to bang in the middle of the Coding Period. Hence, in order to complete the goals of the project, my mentors and I decided to start working on the project from the start of the Community Bonding Period itself. 
+
+Initially, the main challenge we faced was integrating machine learning capabilities into the CoreDNS server as Go (the language CoreDNS has been built on) does not support the CUDA platform (that is essential for machine learning applications). At the same time, the Python ecosystem has tools like TensorFlow, PyTorch, MXNet and various others that not only interact with the CUDA platform but also allow for the easy prototyping and evaluation of deep learning models. 
+
+Upon ideating on the same, we decided not to reinvent the wheel but use the machine learning tools that Python has in tandem with CoreDNS by setting up a communication link between a CoreDNS plugin and a Python Flask server that contains the machine learning model. Hence the goal of the Community Bonding Period was to create a CoreDNS Plugin (ML Bridge Plugin) as well as a machine learning model that would be incorporated into the Flask server (ML Bridge Middleware.) 
