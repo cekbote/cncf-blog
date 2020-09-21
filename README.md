@@ -82,7 +82,7 @@ Before moving on to the training model, we had to preprocess the data to a forma
 The next decision was to create the appropriate machine learning model. We zeroed in on a convolutional neural network that outputs the probability whether a domain name is malicious or benign. The model's input is a (16, 16, 1) shaped array and the output is a single value lying in between 0 and 1. If the output value is less than 0.5, the domain name is considered benign, else it is considered malicious. The details of the Convolutional Neural Net are as follows:
 
 <p float="left" align = "center">
-  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/model_summary.png" width="550" height="440"/>
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/model_summary.png" width="580" height="440"/>
 </p>
 
 The model can be visualised as follows:
