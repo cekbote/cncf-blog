@@ -34,4 +34,48 @@ Upon ideating on the same, we decided not to reinvent the wheel but use the mach
   <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/first_step.png" width="480" height="300"/>
 </p> 
 
-## 
+### The CoreDNS Plugin and the Python Flask Server
+
+During the first two weeks of the community bonding period, I had to create a CoreDNS plugin as well as the Python Flask Server. The plugin would basically communicate with the Python Flask Server to utilise the machine learning capabilities of the Python Ecosystem via HTTP POST requests. 
+
+I’ve had a decent amount of experience in Machine Learning however CoreDNS as well as Go was new to me. There was a pretty steep learning curve to climb and it was during this period that I thought that I’d probably not even pass the first GSoC evaluation. I thought I wasn’t good enough to complete GSoC. However, my mentors were very patient and used to take the time out to explain even the simplest concepts. Moreover, they provided ample reference materials to make sure I had a decent foothold on both Go as well as creating a CoreDNS plugin. They were very encouraging during this period and gave me a lot of confidence that I would be able to complete the project deliverables within the GSoC period. 
+
+The ML Bridge Plugin is a CoreDNS plugin that forwards requests to the ML Bridge Middleware via HTTP POST requests. Once the Middleware processes the request, it sends back the prediction, whether the domain name is malicious or benign, to the plugin. Depending on the nature of the domain name, the plugin can be configured to allow the request to fall through to the other plugins or send the request to Honeypot or Blackhole IP addresses. This would help in protecting users from accessing malicious websites. 
+
+The pseudo-code for the same is as follows:
+
+```python
+
+def mlbridge(request):
+
+result = forward(request) # Forwards the request to the ML Bridge Middleware
+
+if   (result is malicious):
+
+# Send back a Honeypot or Blackhole IP address.
+
+else:
+
+# Allow fallthrough to other plugins.
+```
+
+I was able to complete the CoreDNS plugin within a week and a half.
+
+Due to the fact that I usually code in Python, creating the ML Bridge Middleware (the Flask Server) was pretty easy. It took around two days to create it and a day to test the communication link between the ML Bridge Plugin and the ML Bridge Middleware. 
+
+The only piece that was missing was the machine learning model that was to be included in the ML Bridge Middleware. 
+
+### The Machine Learning Model
+
+For any machine learning model, the main component is data. Paul was kind enough to provide the COVID-19 Cyber Threat Coalition Blacklist for malicious domains. For the benign domains, we found a dataset from DomCop.
+
+Before moving on to the training model, we had to preprocess the data to a format that is suitable for by the machine learning model. The data was preprocessed as follows:
+
+- Each domain name is converted to a unicode code point representation and then extended to a NumPy array of length 256.
+- The dataset was created by combining the malicious domains as well as the non-malicious.
+- The dataset was split as follows:
+    - Training Set: 80% of the dataset.
+    - Validation Set: 10 % of the dataset
+    - Test Set: 10% of the dataset
+- Each NumPy Array is then converted to a (16, 16, 1) matrix.
+
