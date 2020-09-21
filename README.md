@@ -31,7 +31,7 @@ Initially, the main challenge we faced was integrating machine learning capabili
 Upon ideating on the same, we decided not to reinvent the wheel but use the machine learning tools that Python has in tandem with CoreDNS by setting up a communication link between a CoreDNS plugin and a Python Flask server that contains the machine learning model. Hence the goal of the Community Bonding Period was to create a CoreDNS Plugin (ML Bridge Plugin) as well as a machine learning model that would be incorporated into the Flask server (ML Bridge Middleware.) 
 
 <p float="left" align = "center">
-  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/first_step.png" width="480" height="300"/>
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/first_step.png" width="460" height="300"/>
 </p> 
 
 ### The CoreDNS Plugin and the Python Flask Server
@@ -88,12 +88,12 @@ The next decision was to create the appropriate machine learning model. We zeroe
 The model can be visualised as follows:
 
 <p float="left" align = "center">
-  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/model_summary.png"/>
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/model_.png"/>
 </p>
 
 The efficacy of the model is as follows:
 
 <p float="left" align = "center">
-  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/model_.png"/>
+  <img src="https://github.com/cekbote/cncf-blog/blob/master/readme-assets/training_results.png"/>
 </p>
 
