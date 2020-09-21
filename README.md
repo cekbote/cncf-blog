@@ -200,7 +200,7 @@ The main problem was that we had to find a way to dissociate the training from t
 
 Moreover, we still had to create the manual vetting feature so that the user would be able to classify certain domains as malicious or benign. Hence the project goals for the phase were: developing the manual vetting feature, developing the ML Bridge Machine Learning Module as well as developing the frontend for the User Interface for the training feature.
 
-## Developing the Manual Vetting Tool
+### Developing the Manual Vetting Tool
 
 The manual vetting feature allows the user to manually vet domain names that the model has low confidence in, thereby creating a new dataset of malicious or benign domains. This dataset can be used for blocking or allowing domains and also for updating the dataset for retraining the model.
 
@@ -212,7 +212,7 @@ The demo of Manual Vetting can be seen below:
 
 The user can decide whether to classify a non-vetted domain as a benign domain, or can be classified as a domain that is malicious or can be selected to send back Honeypot IP addresses to the malicious domain. To classify the domains into a different class, select all the domains whose class has to be changed by selecting them via the checkboxes on the left. Then select the class you want them to be identified as from the options on the right and then click submit.
 
-## The Machine Learning Module
+### The Machine Learning Module
 
 The ML Bridge Machine Learning Module is a module developed to use the information provided by the user regarding training, via the User Interface, namely the number of epochs, the batch size as well as the sample size to train a new model or retrain the existing model. The module then communicates back to the User Interface the accuracy graph, the loss graph, the confusion matrices as well as confusion metrics via Elasticsearch. 
 
